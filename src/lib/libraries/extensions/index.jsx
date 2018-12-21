@@ -10,6 +10,7 @@ import videoInsetImage from './video-sensing-small.svg';
 import translateImage from './translate.png';
 import translateInsetImage from './translate-small.png';
 import microbitImage from './microbit.png';
+import rosImage from './ros.png';
 import ev3Image from './ev3.png';
 import wedoImage from './wedo.png';
 import text2speechImage from './text2speech.png';
@@ -145,6 +146,13 @@ export default [
                 id="gui.extension.makeymakey.description"
             />
         ),
+        featured: true
+    },
+    {
+        name: 'ROS',
+        extensionId: 'ros',
+        iconURL: rosImage,
+        description: 'Interact with ROS enabled robots.',
         featured: true
     },
     {
