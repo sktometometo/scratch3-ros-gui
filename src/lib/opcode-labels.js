@@ -154,7 +154,10 @@ class OpcodeLabels {
             sensing_loudness: {category: 'sensing'},
             sensing_username: {category: 'sensing'},
             sensing_current: {category: 'sensing'},
-            sensing_timer: {category: 'sensing'}
+            sensing_timer: {category: 'sensing'},
+
+            // ROS
+            ros_getSlot: {category: 'data'}
         };
 
         // Initialize opcodeMap with default strings
@@ -228,6 +231,9 @@ class OpcodeLabels {
             }
         };
         this._opcodeMap.sensing_timer.labelFn = () => this._translator(messages.sensing_timer);
+
+        // ROS
+        this._opcodeMap.ros_getSlot.labelFn = params => params.OBJECT + '.' + params.SLOT;
     }
 
     /**
