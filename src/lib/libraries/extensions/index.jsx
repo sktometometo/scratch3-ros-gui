@@ -20,6 +20,8 @@ import makeymakeyInsetImage from './makeymakey-small.svg';
 import boostImage from './boost.png';
 import boostInsetImage from './boost-small.svg';
 
+import rosPeripheralImage from './peripheral-connection/ros/ros-illustration.svg';
+import rosMenuImage from './peripheral-connection/ros/ros-small.svg';
 import microbitPeripheralImage from './peripheral-connection/microbit/microbit-illustration.svg';
 import microbitMenuImage from './peripheral-connection/microbit/microbit-small.svg';
 import ev3PeripheralImage from './peripheral-connection/ev3/ev3-hub-illustration.svg';
@@ -151,9 +153,17 @@ export default [
     {
         name: 'ROS',
         extensionId: 'ros',
+        collaborator: 'JSK Laboratories',
         iconURL: rosImage,
         description: 'Interact with ROS enabled robots.',
-        featured: true
+        featured: true,
+        disabled: false,
+        launchPeripheralConnectionFlow: true,
+        useAutoScan: false,
+        peripheralImage: rosPeripheralImage,
+        smallPeripheralImage: rosMenuImage,
+        connectingMessage: 'Connected!',
+        helpLink: 'https://github.com/Affonso-Gui/scratch-vm/tree/develop/src/extensions/scratch3_ros'
     },
     {
         name: 'micro:bit',
