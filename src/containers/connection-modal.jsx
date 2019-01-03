@@ -116,6 +116,7 @@ class ConnectionModal extends React.Component {
                 peripheralImage={this.state.extension.peripheralImage}
                 phase={this.state.phase}
                 smallPeripheralImage={this.state.extension.smallPeripheralImage}
+                bluetoothRequired={this.state.extension.bluetoothRequired}
                 title={this.props.extensionId}
                 useAutoScan={this.state.extension.useAutoScan}
                 vm={this.props.vm}

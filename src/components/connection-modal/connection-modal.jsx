@@ -54,6 +54,7 @@ ConnectionModalComponent.propTypes = {
     peripheralButtonImage: PropTypes.string,
     phase: PropTypes.oneOf(Object.keys(PHASES)).isRequired,
     smallPeripheralImage: PropTypes.string,
+    bluetoothRequired: PropTypes.bool,
     title: PropTypes.string.isRequired,
     useAutoScan: PropTypes.bool.isRequired
 };
