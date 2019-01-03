@@ -6,6 +6,7 @@ import React from 'react';
 import Box from '../box/box.jsx';
 import helpIcon from './icons/help.svg';
 import backIcon from './icons/back.svg';
+import rosErrorIcon from './icons/ros-error.svg';
 
 import styles from './connection-modal.css';
 
@@ -13,12 +14,19 @@ const RosUnavailableStep = props => (
     <Box className={styles.body}>
         <Box className={styles.activityArea}>
           <div className={styles.scratchLinkHelp}>
-            <div className={styles.rosErrorMessage}>
-              Error connecting to ROS!!
-            </div>
-            <div className={styles.rosHelpText}>
-              Make sure to enable connections with:
-            </div>
+              <div className={styles.scratchLinkHelpStep}>
+                <div className={styles.helpStepImage}>
+                  <img className={styles.rosIcon}
+                     src={rosErrorIcon}
+                     />
+                </div>
+                <div className={styles.rosErrorMessage}>
+                  Error connecting to ROS!!
+                </div>
+              </div>
+              <div className={styles.rosHelpText}>
+                Make sure to enable connections with:
+              </div>
             <div className={styles.terminalCommand}>
               roslaunch rosbridge_server rosbridge_websocket.launch
             </div>

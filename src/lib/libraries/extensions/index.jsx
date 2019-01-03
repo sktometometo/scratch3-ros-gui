@@ -11,6 +11,7 @@ import translateImage from './translate.png';
 import translateInsetImage from './translate-small.png';
 import microbitImage from './microbit.png';
 import rosImage from './ros.png';
+import rosInsetImage from './ros-inset.svg';
 import ev3Image from './ev3.png';
 import wedoImage from './wedo.png';
 import text2speechImage from './text2speech.png';
@@ -151,10 +152,11 @@ export default [
         featured: true
     },
     {
-        name: 'ROS',
+        name: 'Robot Operating System',
         extensionId: 'ros',
         collaborator: 'JSK Laboratories',
         iconURL: rosImage,
+        insetIconURL: rosInsetImage,
         description: 'Interact with ROS enabled robots.',
         featured: true,
         disabled: false,

@@ -283,17 +283,22 @@
     margin-left: 0.5rem;
 }
 
+.ros-icon {
+    max-width: 65px;
+}
+
 .ros-error-message {
     color: red;
     font-weight: bolder;
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     text-align: center;
+    text-indent: 1.0rem;
 }
 
 .ros-help-text {
     text-align: left;
     text-indent: 1.5rem;
-    margin-top: -0.5rem;
+    margin-top: -1.0rem;
     margin-bottom: -1.25rem;
 }
 
