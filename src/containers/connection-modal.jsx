@@ -72,8 +72,16 @@ class ConnectionModal extends React.Component {
         // Assume errors that come in during scanning phase are the result of not
         // having scratch-link installed.
         if (this.state.phase === PHASES.scanning || this.state.phase === PHASES.unavailable) {
-            const phase = this.state.extension.extensionId === 'ros' ?
-                  PHASES.ros_unavailable : PHASES.unavailable
+            var phase;
+            switch (this.state.extension.extensionId) {
+            case 'ros':
+            case 'fetchCore':
+                phase = PHASES.ros_unavailable;
+                break;
+            default:
+                phase = PHASES.unavailable;
+            };
+
             this.setState({
                 phase: phase
             });

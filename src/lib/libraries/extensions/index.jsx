@@ -29,6 +29,9 @@ import rosInsetIconURL from './ros/ros-inset.svg';
 import rosConnectionIconURL from './ros/ros-illustration.svg';
 import rosConnectionSmallIconURL from './ros/ros-small.svg';
 
+import fetchCoreInsetIconURL from './fetchcore/fetchcore-small.svg';
+import fetchCoreConnectionSmallIconURL from './fetchcore/fetchcore-small.svg';
+
 import ev3IconURL from './ev3/ev3.png';
 import ev3InsetIconURL from './ev3/ev3-small.svg';
 import ev3ConnectionIconURL from './ev3/ev3-hub-illustration.svg';
@@ -186,6 +189,21 @@ export default [
         smallPeripheralImage: rosConnectionSmallIconURL,
         connectingMessage: 'Connected!',
         helpLink: 'https://github.com/Affonso-Gui/scratch-vm/tree/develop/src/extensions/scratch3_ros'
+    },
+    {
+        name: 'Fetch Core Copy',
+        extensionId: 'fetchCore',
+        collaborator: 'JSK Laboratories',
+        iconURL: rosIconURL,
+        insetIconURL: fetchCoreInsetIconURL,
+        description: 'Interact with fetch robot.',
+        featured: true,
+        disabled: false,
+        launchPeripheralConnectionFlow: true,
+        useAutoScan: false,
+        peripheralImage: rosConnectionIconURL,
+        smallPeripheralImage: fetchCoreConnectionSmallIconURL,
+        connectingMessage: 'Connected!',
     },
     {
         name: 'micro:bit',
