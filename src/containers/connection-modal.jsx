@@ -75,7 +75,7 @@ class ConnectionModal extends React.Component {
             var phase;
             switch (this.state.extension.extensionId) {
             case 'ros':
-            case 'fetchCore':
+            case 'fetchRobot':
                 phase = PHASES.ros_unavailable;
                 break;
             default:
