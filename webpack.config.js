@@ -27,10 +27,6 @@ const base = {
         filename: '[name].js',
         chunkFilename: 'chunks/[name].js'
     },
-    externals: {
-        React: 'react',
-        ReactDOM: 'react-dom'
-    },
     resolve: {
         symlinks: false
     },
@@ -55,10 +51,7 @@ const base = {
                     ['react-intl', {
                         messagesDir: './translations/messages/'
                     }]],
-                presets: [
-                    ['@babel/preset-env', {targets: {browsers: ['last 3 versions', 'Safari >= 8', 'iOS >= 8']}}],
-                    '@babel/preset-react'
-                ]
+                presets: ['@babel/preset-env', '@babel/preset-react']
             }
         },
         {
@@ -81,9 +74,7 @@ const base = {
                         return [
                             postcssImport,
                             postcssVars,
-                            autoprefixer({
-                                browsers: ['last 3 versions', 'Safari >= 8', 'iOS >= 8']
-                            })
+                            autoprefixer
                         ];
                     }
                 }
@@ -100,6 +91,10 @@ const base = {
     plugins: []
 };
 
+if (!process.env.CI) {
+    base.plugins.push(new webpack.ProgressPlugin());
+}
+
 module.exports = [
     // to run editor examples
     defaultsDeep({}, base, {
@@ -113,10 +108,6 @@ module.exports = [
         output: {
             path: path.resolve(__dirname, 'build'),
             filename: '[name].js'
-        },
-        externals: {
-            React: 'react',
-            ReactDOM: 'react-dom'
         },
         module: {
             rules: base.module.rules.concat([
@@ -201,8 +192,8 @@ module.exports = [
                 publicPath: `${STATIC_PATH}/`
             },
             externals: {
-                React: 'react',
-                ReactDOM: 'react-dom'
+                'react': 'react',
+                'react-dom': 'react-dom'
             },
             module: {
                 rules: base.module.rules.concat([
@@ -224,6 +215,12 @@ module.exports = [
                 new CopyWebpackPlugin([{
                     from: 'extension-worker.{js,js.map}',
                     context: 'node_modules/scratch-vm/dist/web'
+                }]),
+                // Include library JSON files for scratch-desktop to use for downloading
+                new CopyWebpackPlugin([{
+                    from: 'src/lib/libraries/*.json',
+                    to: 'libraries',
+                    flatten: true
                 }])
             ])
         })) : []

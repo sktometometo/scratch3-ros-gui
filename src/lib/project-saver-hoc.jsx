@@ -234,9 +234,14 @@ const ProjectSaverHOC = function (WrappedComponent) {
                         asset.dataFormat,
                         asset.data,
                         asset.assetId
-                    ).then(
-                        () => (asset.clean = true)
-                    )
+                    ).then(response => {
+                        // Asset servers respond with {status: ok} for successful POSTs
+                        if (response.status !== 'ok') {
+                            // Errors include a `code` property, e.g. "Forbidden"
+                            return Promise.reject(response.code);
+                        }
+                        asset.clean = true;
+                    })
                 )
             )
                 .then(() => this.props.onUpdateProjectData(projectId, savedVMState, requestParams))
@@ -246,6 +251,7 @@ const ProjectSaverHOC = function (WrappedComponent) {
                     if (id && this.props.onUpdateProjectThumbnail) {
                         this.storeProjectThumbnail(id);
                     }
+                    this.reportTelemetryEvent('projectDidSave');
                     return response;
                 })
                 .catch(err => {
@@ -286,9 +292,15 @@ const ProjectSaverHOC = function (WrappedComponent) {
          */
         // TODO make a telemetry HOC and move this stuff there
         reportTelemetryEvent (event) {
-            if (this.props.onProjectTelemetryEvent) {
-                const metadata = collectMetadata(this.props.vm, this.props.reduxProjectTitle, this.props.locale);
-                this.props.onProjectTelemetryEvent(event, metadata);
+            try {
+                if (this.props.onProjectTelemetryEvent) {
+                    const metadata = collectMetadata(this.props.vm, this.props.reduxProjectTitle, this.props.locale);
+                    this.props.onProjectTelemetryEvent(event, metadata);
+                }
+            } catch (e) {
+                log.error('Telemetry error', event, e);
+                // This is intentionally fire/forget because a failure
+                // to report telemetry should not block saving
             }
         }
 
@@ -428,7 +440,7 @@ const ProjectSaverHOC = function (WrappedComponent) {
         onShowCreatingRemixAlert: () => showAlertWithTimeout(dispatch, 'creatingRemix'),
         onShowSaveSuccessAlert: () => showAlertWithTimeout(dispatch, 'saveSuccess'),
         onShowSavingAlert: () => showAlertWithTimeout(dispatch, 'saving'),
-        onUpdatedProject: (projectId, loadingState) => dispatch(doneUpdatingProject(projectId, loadingState)),
+        onUpdatedProject: loadingState => dispatch(doneUpdatingProject(loadingState)),
         setAutoSaveTimeoutId: id => dispatch(setAutoSaveTimeoutId(id))
     });
     // Allow incoming props to override redux-provided props. Used to mock in tests.

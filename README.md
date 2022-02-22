@@ -18,7 +18,8 @@ When communicating with the ROS interface, message types are mostly infered by t
 This also means, however, that this extension doesn't do well in advertising new topics or serving services. Maybe these will be supported in future releases, but for now Scratch interface is designed to act as a ROS **client**, publishing to topics and called nodes already advertised by some other node, which should be responsible to handle the message from Scratch and do all of the robotics stuff.
 
 ## Quick Start
-0. [Install ROS](http://wiki.ros.org/ROS/Installation) and the following dependencies. This project was tested on ROS kinetic, but should run well in other distributions as well.
+0. [Install ROS](http://wiki.ros.org/ROS/Installation) and the following dependencies. This project was tested on ROS kinetic and melodic.
+
 ```bash
 # Install main dependencies
 sudo apt install ros-kinetic-rosbridge-server
@@ -50,7 +51,6 @@ Examples can be found at the [examples directory](https://github.com/Affonso-Gui
 
 Details of provided blocks can be found at [BLOCKS.md](https://github.com/Affonso-Gui/scratch3-ros-vm/blob/develop/src/extensions/scratch3_ros/BLOCKS.md).
 
-
 ## Run from Source
 
 Git clone the repositories below and follow instructions at https://github.com/LLK/scratch-gui/wiki/Getting-Started
@@ -63,3 +63,4 @@ Git clone the repositories below and follow instructions at https://github.com/L
 You can include Scratch3-ROS on your Scratch project and create custom block libraries for your own robot. An example is given in the `fetch_extension` branch:
 - https://github.com/Affonso-Gui/scratch3-ros-vm/tree/fetch_extension
 - https://github.com/Affonso-Gui/scratch3-ros-gui/tree/fetch_extension
+

@@ -2,7 +2,6 @@ import bindAll from 'lodash.bindall';
 import PropTypes from 'prop-types';
 import React from 'react';
 import {defineMessages, injectIntl, intlShape} from 'react-intl';
-import {connect} from 'react-redux';
 import VM from 'scratch-vm';
 
 import backdropLibraryContent from '../lib/libraries/backdrops.json';
@@ -28,13 +27,13 @@ class BackdropLibrary extends React.Component {
     handleItemSelect (item) {
         const vmBackdrop = {
             name: item.name,
-            rotationCenterX: item.info[0] && item.info[0] / 2,
-            rotationCenterY: item.info[1] && item.info[1] / 2,
-            bitmapResolution: item.info.length > 2 ? item.info[2] : 1,
+            rotationCenterX: item.rotationCenterX,
+            rotationCenterY: item.rotationCenterY,
+            bitmapResolution: item.bitmapResolution,
             skinId: null
         };
-        this.props.vm.setEditingTarget(this.props.stageID);
-        this.props.vm.addBackdrop(item.md5, vmBackdrop);
+        // Do not switch to stage, just add the backdrop
+        this.props.vm.addBackdrop(item.md5ext, vmBackdrop);
     }
     render () {
         return (
@@ -53,17 +52,7 @@ class BackdropLibrary extends React.Component {
 BackdropLibrary.propTypes = {
     intl: intlShape.isRequired,
     onRequestClose: PropTypes.func,
-    stageID: PropTypes.string.isRequired,
     vm: PropTypes.instanceOf(VM).isRequired
 };
 
-const mapStateToProps = state => ({
-    stageID: state.scratchGui.targets.stage.id
-});
-
-const mapDispatchToProps = () => ({});
-
-export default injectIntl(connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(BackdropLibrary));
+export default injectIntl(BackdropLibrary);
