@@ -29,6 +29,14 @@ import rosInsetIconURL from './ros/ros-inset.svg';
 import rosConnectionIconURL from './ros/ros-illustration.svg';
 import rosConnectionSmallIconURL from './ros/ros-small.svg';
 
+import fetchRobotIconURL from './fetchrobot/fetch.png';
+import fetchRobotInsetIconURL from './fetchrobot/fetch-small.svg';
+import fetchRobotConnectionSmallIconURL from './fetchrobot/fetch-small.svg';
+
+import spotRobotIconURL from './spotrobot/spot.png';
+import spotRobotInsetIconURL from './spotrobot/spot-small.svg';
+import spotRobotConnectionSmallIconURL from './spotrobot/spot-small.svg';
+
 import ev3IconURL from './ev3/ev3.png';
 import ev3InsetIconURL from './ev3/ev3-small.svg';
 import ev3ConnectionIconURL from './ev3/ev3-hub-illustration.svg';
@@ -186,6 +194,36 @@ export default [
         smallPeripheralImage: rosConnectionSmallIconURL,
         connectingMessage: 'Connected!',
         helpLink: 'https://github.com/Affonso-Gui/scratch-vm/tree/develop/src/extensions/scratch3_ros'
+    },
+    {
+        name: 'Fetch Robot',
+        extensionId: 'fetchRobot',
+        collaborator: 'JSK Laboratories',
+        iconURL: fetchRobotIconURL,
+        insetIconURL: fetchRobotInsetIconURL,
+        description: 'Interact with fetch robot.',
+        featured: true,
+        disabled: false,
+        launchPeripheralConnectionFlow: true,
+        useAutoScan: false,
+        peripheralImage: rosConnectionIconURL,
+        smallPeripheralImage: fetchRobotConnectionSmallIconURL,
+        connectingMessage: 'Connected!',
+    },
+    {
+        name: 'Spot Robot',
+        extensionId: 'spotRobot',
+        collaborator: 'JSK Laboratories',
+        iconURL: spotRobotIconURL,
+        insetIconURL: spotRobotInsetIconURL,
+        description: 'Interact with spot robot.',
+        featured: true,
+        disabled: false,
+        launchPeripheralConnectionFlow: true,
+        useAutoScan: false,
+        peripheralImage: rosConnectionIconURL,
+        smallPeripheralImage: spotRobotConnectionSmallIconURL,
+        connectingMessage: 'Connected!',
     },
     {
         name: 'micro:bit',
