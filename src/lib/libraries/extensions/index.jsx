@@ -33,6 +33,10 @@ import fetchRobotIconURL from './fetchrobot/fetch.png';
 import fetchRobotInsetIconURL from './fetchrobot/fetch-small.svg';
 import fetchRobotConnectionSmallIconURL from './fetchrobot/fetch-small.svg';
 
+import spotRobotIconURL from './spotrobot/spot.png';
+import spotRobotInsetIconURL from './spotrobot/spot-small.svg';
+import spotRobotConnectionSmallIconURL from './spotrobot/spot-small.svg';
+
 import ev3IconURL from './ev3/ev3.png';
 import ev3InsetIconURL from './ev3/ev3-small.svg';
 import ev3ConnectionIconURL from './ev3/ev3-hub-illustration.svg';
@@ -204,6 +208,21 @@ export default [
         useAutoScan: false,
         peripheralImage: rosConnectionIconURL,
         smallPeripheralImage: fetchRobotConnectionSmallIconURL,
+        connectingMessage: 'Connected!',
+    },
+    {
+        name: 'Spot Robot',
+        extensionId: 'spotRobot',
+        collaborator: 'JSK Laboratories',
+        iconURL: spotRobotIconURL,
+        insetIconURL: spotRobotInsetIconURL,
+        description: 'Interact with spot robot.',
+        featured: true,
+        disabled: false,
+        launchPeripheralConnectionFlow: true,
+        useAutoScan: false,
+        peripheralImage: rosConnectionIconURL,
+        smallPeripheralImage: spotRobotConnectionSmallIconURL,
         connectingMessage: 'Connected!',
     },
     {
