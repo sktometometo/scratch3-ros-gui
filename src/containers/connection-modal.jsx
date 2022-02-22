@@ -75,6 +75,7 @@ class ConnectionModal extends React.Component {
             var phase;
             switch (this.state.extension.extensionId) {
             case 'ros':
+            case 'pr2Robot':
             case 'fetchRobot':
             case 'spotRobot':
                 phase = PHASES.ros_unavailable;

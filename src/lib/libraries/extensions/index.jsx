@@ -25,9 +25,13 @@ import microbitConnectionIconURL from './microbit/microbit-illustration.svg';
 import microbitConnectionSmallIconURL from './microbit/microbit-small.svg';
 
 import rosIconURL from './ros/ros.png';
-import rosInsetIconURL from './ros/ros-inset.svg';
+import rosInsetIconURL from './ros/ros-small.svg';
 import rosConnectionIconURL from './ros/ros-illustration.svg';
 import rosConnectionSmallIconURL from './ros/ros-small.svg';
+
+import pr2RobotIconURL from './pr2robot/pr2.png';
+import pr2RobotInsetIconURL from './pr2robot/pr2-small.svg';
+import pr2RobotConnectionSmallIconURL from './pr2robot/pr2-small.svg';
 
 import fetchRobotIconURL from './fetchrobot/fetch.png';
 import fetchRobotInsetIconURL from './fetchrobot/fetch-small.svg';
@@ -194,6 +198,21 @@ export default [
         smallPeripheralImage: rosConnectionSmallIconURL,
         connectingMessage: 'Connected!',
         helpLink: 'https://github.com/Affonso-Gui/scratch-vm/tree/develop/src/extensions/scratch3_ros'
+    },
+    {
+        name: 'Pr2 Robot',
+        extensionId: 'pr2Robot',
+        collaborator: 'JSK Laboratories',
+        iconURL: pr2RobotIconURL,
+        insetIconURL: pr2RobotInsetIconURL,
+        description: 'Interact with pr2 robot.',
+        featured: true,
+        disabled: false,
+        launchPeripheralConnectionFlow: true,
+        useAutoScan: false,
+        peripheralImage: rosConnectionIconURL,
+        smallPeripheralImage: pr2RobotConnectionSmallIconURL,
+        connectingMessage: 'Connected!',
     },
     {
         name: 'Fetch Robot',
