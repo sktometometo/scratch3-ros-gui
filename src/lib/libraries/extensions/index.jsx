@@ -194,8 +194,8 @@ export default [
         disabled: false,
         launchPeripheralConnectionFlow: true,
         useAutoScan: false,
-        peripheralImage: rosConnectionIconURL,
-        smallPeripheralImage: rosConnectionSmallIconURL,
+        connectionIconURL: rosConnectionIconURL,
+        // connectionSmallIconURL: rosConnectionSmallIconURL,
         connectingMessage: 'Connected!',
         helpLink: 'https://github.com/Affonso-Gui/scratch-vm/tree/develop/src/extensions/scratch3_ros'
     },
@@ -210,8 +210,8 @@ export default [
         disabled: false,
         launchPeripheralConnectionFlow: true,
         useAutoScan: false,
-        peripheralImage: rosConnectionIconURL,
-        smallPeripheralImage: pr2RobotConnectionSmallIconURL,
+        connectionIconURL: rosConnectionIconURL,
+        // connectionSmallIconURL: pr2RobotConnectionSmallIconURL,
         connectingMessage: 'Connected!',
     },
     {
@@ -225,8 +225,8 @@ export default [
         disabled: false,
         launchPeripheralConnectionFlow: true,
         useAutoScan: false,
-        peripheralImage: rosConnectionIconURL,
-        smallPeripheralImage: fetchRobotConnectionSmallIconURL,
+        connectionIconURL: rosConnectionIconURL,
+        // connectionSmallIconURL: fetchRobotConnectionSmallIconURL,
         connectingMessage: 'Connected!',
     },
     {
@@ -240,8 +240,8 @@ export default [
         disabled: false,
         launchPeripheralConnectionFlow: true,
         useAutoScan: false,
-        peripheralImage: rosConnectionIconURL,
-        smallPeripheralImage: spotRobotConnectionSmallIconURL,
+        connectionIconURL: rosConnectionIconURL,
+        // connectionSmallIconURL: spotRobotConnectionSmallIconURL,
         connectingMessage: 'Connected!',
     },
     {
