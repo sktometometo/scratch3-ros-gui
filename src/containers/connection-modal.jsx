@@ -78,6 +78,7 @@ class ConnectionModal extends React.Component {
             case 'pr2Robot':
             case 'fetchRobot':
             case 'spotRobot':
+            case 'go1Robot':
                 phase = PHASES.ros_unavailable;
                 break;
             default:

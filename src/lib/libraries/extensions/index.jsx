@@ -41,6 +41,10 @@ import spotRobotIconURL from './spotrobot/spot.png';
 import spotRobotInsetIconURL from './spotrobot/spot-small.svg';
 import spotRobotConnectionSmallIconURL from './spotrobot/spot-small.svg';
 
+import go1RobotIconURL from './go1robot/go1.png';
+import go1RobotInsetIconURL from './go1robot/go1-small.svg';
+import go1RobotConnectionSmallIconURL from './go1robot/go1-small.svg';
+
 import ev3IconURL from './ev3/ev3.png';
 import ev3InsetIconURL from './ev3/ev3-small.svg';
 import ev3ConnectionIconURL from './ev3/ev3-hub-illustration.svg';
@@ -242,6 +246,21 @@ export default [
         useAutoScan: false,
         connectionIconURL: rosConnectionIconURL,
         // connectionSmallIconURL: spotRobotConnectionSmallIconURL,
+        connectingMessage: 'Connected!',
+    },
+    {
+        name: 'Go1 Robot',
+        extensionId: 'go1Robot',
+        collaborator: 'JSK Laboratories',
+        iconURL: go1RobotIconURL,
+        insetIconURL: go1RobotInsetIconURL,
+        description: 'Interact with go1 robot.',
+        featured: true,
+        disabled: false,
+        launchPeripheralConnectionFlow: true,
+        useAutoScan: false,
+        connectionIconURL: rosConnectionIconURL,
+        // connectionSmallIconURL: go1RobotConnectionSmallIconURL,
         connectingMessage: 'Connected!',
     },
     {
