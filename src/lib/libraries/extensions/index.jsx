@@ -46,8 +46,8 @@ import go1RobotInsetIconURL from './go1robot/go1-small.svg';
 import go1RobotConnectionSmallIconURL from './go1robot/go1-small.svg';
 
 import pepperRobotIconURL from './pepperrobot/pepper.png';
-import pepperRobotInsetIconURL from './ros/ros-small.svg';
-import pepperRobotConnectionSmallIconURL from './ros/ros-small.svg';
+import pepperRobotInsetIconURL from './pepperrobot/pepper-small.svg';
+import pepperRobotConnectionSmallIconURL from './pepperrobot/pepper-small.svg';
 
 import ev3IconURL from './ev3/ev3.png';
 import ev3InsetIconURL from './ev3/ev3-small.svg';
