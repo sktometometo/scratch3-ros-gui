@@ -45,6 +45,10 @@ import go1RobotIconURL from './go1robot/go1.png';
 import go1RobotInsetIconURL from './go1robot/go1-small.svg';
 import go1RobotConnectionSmallIconURL from './go1robot/go1-small.svg';
 
+import pepperRobotIconURL from './pepperrobot/pepper.png';
+import pepperRobotInsetIconURL from './ros/ros-small.svg';
+import pepperRobotConnectionSmallIconURL from './ros/ros-small.svg';
+
 import ev3IconURL from './ev3/ev3.png';
 import ev3InsetIconURL from './ev3/ev3-small.svg';
 import ev3ConnectionIconURL from './ev3/ev3-hub-illustration.svg';
@@ -261,6 +265,21 @@ export default [
         useAutoScan: false,
         connectionIconURL: rosConnectionIconURL,
         // connectionSmallIconURL: go1RobotConnectionSmallIconURL,
+        connectingMessage: 'Connected!',
+    },
+    {
+        name: 'Pepper Robot',
+        extensionId: 'pepperRobot',
+        collaborator: 'JSK Laboratories',
+        iconURL: pepperRobotIconURL,
+        insetIconURL: pepperRobotInsetIconURL,
+        description: 'Interact with pepper robot.',
+        featured: true,
+        disabled: false,
+        launchPeripheralConnectionFlow: true,
+        useAutoScan: false,
+        connectionIconURL: rosConnectionIconURL,
+        // connectionSmallIconURL: pepperRobotConnectionSmallIconURL,
         connectingMessage: 'Connected!',
     },
     {
