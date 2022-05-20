@@ -78,7 +78,8 @@ const reducer = function (state, action) {
     case SHOW_EXTENSION_ALERT: {
         const extensionId = action.data.extensionId;
         if (extensionId) {
-            const extension = extensionData.find(ext => ext.extensionId === extensionId);
+            const extension = extensionData.
+                  find(ext => ext.extensionId === extensionId.split(':')[0]);
             if (extension) {
                 const newList = state.alertsList.slice();
                 const newAlert = {

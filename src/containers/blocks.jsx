@@ -463,7 +463,8 @@ class Blocks extends React.Component {
         this.handleExtensionAdded(categoryInfo);
     }
     handleCategorySelected (categoryId) {
-        const extension = extensionData.find(ext => ext.extensionId === categoryId);
+        const extension = extensionData.
+              find(ext => ext.extensionId === categoryId.split(':')[0]);
         if (extension && extension.launchPeripheralConnectionFlow) {
             this.handleConnectionModalStart(categoryId);
         }

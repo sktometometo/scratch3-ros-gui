@@ -74,7 +74,7 @@ class ConnectionModal extends React.Component {
         // having scratch-link installed.
         if (this.state.phase === PHASES.scanning || this.state.phase === PHASES.unavailable) {
             var phase;
-            switch (this.state.extension.extensionId) {
+            switch (this.state.extension.extensionId.split(':')[0]) {
             case 'ros':
             case 'pr2Robot':
             case 'fetchRobot':
