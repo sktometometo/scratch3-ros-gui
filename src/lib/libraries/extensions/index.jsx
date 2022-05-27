@@ -221,6 +221,7 @@ export default [
         connectionIconURL: rosConnectionIconURL,
         // connectionSmallIconURL: pr2RobotConnectionSmallIconURL,
         connectingMessage: 'Connected!',
+        helpLink: 'https://github.com/Affonso-Gui/scratch-vm/tree/develop/src/extensions/scratch3_ros'
     },
     {
         name: 'Fetch Robot',
@@ -236,6 +237,7 @@ export default [
         connectionIconURL: rosConnectionIconURL,
         // connectionSmallIconURL: fetchRobotConnectionSmallIconURL,
         connectingMessage: 'Connected!',
+        helpLink: 'https://github.com/Affonso-Gui/scratch-vm/tree/develop/src/extensions/scratch3_ros'
     },
     {
         name: 'Spot Robot',
@@ -251,6 +253,7 @@ export default [
         connectionIconURL: rosConnectionIconURL,
         // connectionSmallIconURL: spotRobotConnectionSmallIconURL,
         connectingMessage: 'Connected!',
+        helpLink: 'https://github.com/Affonso-Gui/scratch-vm/tree/develop/src/extensions/scratch3_ros'
     },
     {
         name: 'Go1 Robot',
@@ -266,6 +269,7 @@ export default [
         connectionIconURL: rosConnectionIconURL,
         // connectionSmallIconURL: go1RobotConnectionSmallIconURL,
         connectingMessage: 'Connected!',
+        helpLink: 'https://github.com/Affonso-Gui/scratch-vm/tree/develop/src/extensions/scratch3_ros'
     },
     {
         name: 'Pepper Robot',
@@ -281,6 +285,7 @@ export default [
         connectionIconURL: rosConnectionIconURL,
         // connectionSmallIconURL: pepperRobotConnectionSmallIconURL,
         connectingMessage: 'Connected!',
+        helpLink: 'https://github.com/Affonso-Gui/scratch-vm/tree/develop/src/extensions/scratch3_ros'
     },
     {
         name: 'micro:bit',
