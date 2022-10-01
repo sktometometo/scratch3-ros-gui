@@ -10,7 +10,28 @@ import rosErrorIcon from './icons/ros-error.svg';
 
 import styles from './connection-modal.css';
 
-const RosUnavailableStep = props => (
+const RosUnavailableStep = props => {
+    let message, terminal_enabled;
+    if (location.protocol != 'http:') {
+        message = "ROS communication is only supported on http!";
+        terminal_enabled = false;
+    }
+    else {
+        message = "Make sure to enable connections with:";
+        terminal_enabled = true;
+    }
+
+    function renderTerminalMessage() {
+        if (terminal_enabled) {
+            return (
+              <div className={styles.terminalCommand}>
+                roslaunch rosbridge_server rosbridge_websocket.launch
+              </div>
+            )
+        }
+    }
+
+    return (
     <Box className={styles.body}>
         <Box className={styles.activityArea}>
           <div className={styles.scratchLinkHelp}>
@@ -25,11 +46,9 @@ const RosUnavailableStep = props => (
                 </div>
               </div>
               <div className={styles.rosHelpText}>
-                Make sure to enable connections with:
+                {message}
               </div>
-            <div className={styles.terminalCommand}>
-              roslaunch rosbridge_server rosbridge_websocket.launch
-            </div>
+            {renderTerminalMessage()}
           </div>
         </Box>
         <Box className={styles.bottomArea}>
@@ -65,7 +84,8 @@ const RosUnavailableStep = props => (
             </Box>
         </Box>
     </Box>
-);
+    );
+}
 
 RosUnavailableStep.propTypes = {
     onHelp: PropTypes.func,
