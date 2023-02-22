@@ -63,4 +63,3 @@ Git clone the repositories below and follow instructions at https://github.com/L
 You can include Scratch3-ROS on your Scratch project and create custom block libraries for your own robot. An example is given in the `fetch_extension` branch:
 - https://github.com/Affonso-Gui/scratch3-ros-vm/tree/fetch_extension
 - https://github.com/Affonso-Gui/scratch3-ros-gui/tree/fetch_extension
-
